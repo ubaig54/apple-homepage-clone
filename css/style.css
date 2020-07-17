@@ -1,0 +1,439 @@
+/* 
+    01. Global styling
+    02. Header
+    03. Hero
+    04. Grid
+    05. Footer
+*/
+
+/* 00. Variables */
+
+:root {
+    --textColor: #f5f5f7;
+}
+
+/* 01. Global Styling */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    background: #000;
+}
+
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    transition: .3s;
+    outline: none;
+    color: var(--textColor);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    float: left;
+    padding: 0;
+    list-style: none;
+}
+
+.gap {
+    height: 50px;
+}
+
+.separator {
+    height: 150px;
+    background: linear-gradient(360deg, black, transparent);
+    margin-top: -150px;
+}
+
+.wrapper {
+    max-width: 1366px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* 02. Header */
+
+header {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: saturate(200%) blur(20px);
+    padding: 11px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+nav a {
+    opacity: .8;
+    color: #fff;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+nav button {
+    background: none;
+    border: none;
+}
+
+nav a img {
+    width: 16px;
+}
+
+/* 03. Hero */
+
+.hero {
+    background: #141414;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.hero h3 {
+    font-size: 72px;
+    margin: 0;
+    margin-top: 24px;
+}
+
+.hero p {
+    margin-top: 24px;
+}
+
+.hero p:first-of-type {
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+}
+
+.hero p a {
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.hero p a:hover span {
+    text-decoration: underline;
+}
+
+p.availability {
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.hero .right-icon {
+    width: 7px;
+    margin: 0 0 0 4px;
+}
+
+/* 04. Grid */
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.035fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-template-areas: "retina_display durable_glass a13_bionic" "retina_display durable_glass a13_bionic" "touch_id durable_glass four_k" "touch_id durable_glass portrait_mode" "quicktake wireless portrait_mode" "quicktake water_dust finishes" "stereo water_dust finishes";
+    padding: 10px;
+}
+
+/* .grid img {
+    width: 100%;
+} */
+
+figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* .mainGrid video {
+    width: 100%;
+} */
+
+.grid {
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.grid .title {
+    position: absolute;
+    font-weight: bold;
+}
+
+.retina_display {
+    grid-area: retina_display;
+    background: #141414;
+    position: relative;
+}
+
+.retina_display .title {
+    text-align: center;
+    font-size: 44px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.retina_display img {
+    width: 110%;
+}
+
+.durable_glass img {
+    width: 100%;
+}
+
+.durable_glass {
+    grid-area: durable_glass;
+    background: #131313;
+    position: relative;
+}
+
+.durable_glass .title {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    align-items: end;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.a13_bionic {
+    grid-area: a13_bionic;
+    background: #161616;
+    position: relative;
+}
+
+.a13_bionic .gridTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a13_bionic .title {
+    font-size: 44px;
+    width: 218px;
+    height: 230px;
+}
+
+.touch_id {
+    grid-area: touch_id;
+    background: #141414;
+    position: relative;
+}
+
+.touch_id .title {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    align-items: end;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.four_k {
+    display: flex;
+    grid-area: four_k;
+    background: #141414;
+}
+
+.four_k img {
+    margin-right: 85px;
+}
+
+.four_k .title {
+    margin-left: 85px;
+}
+
+.quicktake {
+    grid-area: quicktake;
+    background: #131313;
+    align-items: flex-start;
+    position: relative;
+}
+
+.quicktake .title {
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    align-items: end;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.wireless {
+    display: flex;
+    grid-area: wireless;
+    background: #141414;
+}
+
+.wireless img {
+    margin-right: 135px;
+}
+
+.wireless .title {
+    margin-left: 39px;
+    font-size: 24px;
+}
+
+.portrait_mode {
+    grid-area: portrait_mode;
+    background: #161616;
+    position: relative;
+}
+
+.portrait_mode .title {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    align-items: end;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.portrait_mode video {
+    width: 110%;
+    margin-left: -26px;
+}
+
+.stereo {
+    grid-area: stereo;
+    background: #161616;
+    position: relative;
+}
+
+.stereo .title {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.water_dust {
+    grid-area: water_dust;
+    background: #141414;
+}
+
+.finishes {
+    grid-area: finishes;
+    background: #131313;
+    justify-content: end;
+}
+
+/* 05. Footer */
+
+footer {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 80px 10px 0 10px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -.01em;
+}
+
+footer p {
+    opacity: .8;
+}
+
+footer hr {
+    margin: 20px 0;
+    border: solid 0.5px #bfbab1;
+}
+
+footer h3 {
+    font-size: 12px;
+}
+
+.footerLinks {
+    overflow: hidden;
+}
+
+.footerLinksColumn {
+    width: 20%;
+    float: left;
+}
+
+.footerLinksColumn ul {
+    width: 100%;
+}
+
+.footerLinksColumn li {
+    margin-bottom: .8em;
+}
+
+.footerLinksColumn li a, .copyrights a {
+    opacity: .8;
+    color: #fff;
+}
+
+.footerLinksColumn li a:hover, .copyrights a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.moreWaysToShop a:hover {
+    text-decoration: underline;
+}
+
+.copyrights {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.copyrights a {
+    padding: 0 12px;
+    border-right: solid 1px #bfbab1;
+}
+
+.copyrights a:last-of-type {
+    border: none;
+    padding-right: 0;
+}
